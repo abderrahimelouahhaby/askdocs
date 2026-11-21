@@ -158,5 +158,3 @@ ALTER TABLE "Conversation" ADD CONSTRAINT "Conversation_userId_fkey" FOREIGN KEY
 
 -- AddForeignKey
 ALTER TABLE "Message" ADD CONSTRAINT "Message_conversationId_fkey" FOREIGN KEY ("conversationId") REFERENCES "Conversation"("id") ON DELETE CASCADE ON UPDATE CASCADE;
-
-CREATE INDEX chunk_embedding_hnsw ON "Chunk" USING hnsw (embedding vector_cosine_ops);

@@ -133,3 +133,13 @@ model Message {
 
   @@index([conversationId, createdAt])
 }
+
+model RateLimit {
+  id          String @id
+  key         String
+  count       Int
+  lastRequest BigInt
+
+  @@unique([key])
+  @@map("rateLimit")
+}
