@@ -36,7 +36,7 @@ jobs:
       BETTER_AUTH_URL: http://localhost:3000
       AI_PROVIDER: fake
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version: 24
