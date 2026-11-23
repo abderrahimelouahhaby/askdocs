@@ -1,24 +1,5 @@
-import { expect, test, type Page } from '@playwright/test';
-
-const PASSWORD = 'correct-horse-battery';
-
-function uniqueEmail() {
-  return `e2e-${Date.now()}-${Math.floor(Math.random() * 1000000)}@example.com`;
-}
-
-async function signUp(page: Page, email: string) {
-  await page.goto('/sign-up');
-  await page.getByLabel('Name').fill('Test User');
-  await page.getByLabel('Email').fill(email);
-  await page.getByLabel('Password').fill(PASSWORD);
-  await page.getByRole('button', { name: 'Create account' }).click();
-  await expect(page).toHaveURL(/documents/);
-}
-
-async function logOut(page: Page) {
-  await page.getByRole('button', { name: 'Log out' }).click();
-  await expect(page).toHaveURL(/sign-in/);
-}
+import { expect, test } from '@playwright/test';
+import { PASSWORD, logOut, signUp, uniqueEmail } from './helpers';
 
 test('a visitor can sign up, log out and log back in', async ({ page }) => {
   const email = uniqueEmail();
