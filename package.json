@@ -20,8 +20,10 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
+    "@ai-sdk/google": "^4.0.128",
     "@prisma/adapter-pg": "^7.10.1",
     "@prisma/client": "^7.10.1",
+    "ai": "^7.0.183",
     "better-auth": "^1.7.27",
     "class-variance-authority": "^0.7.1",
     "cn": "^0.5.2",
@@ -54,6 +56,7 @@
     "prettier-plugin-tailwindcss": "^0.8.1",
     "prisma": "^7.10.1",
     "tailwindcss": "4.3.3",
+    "tsx": "^4.23.15",
     "typescript": "^5",
     "vitest": "^5.1.1"
   },
